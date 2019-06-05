@@ -31,20 +31,21 @@ Things you may want to cover:
 |mail|string|null:false,unique:true|
 
 ### Association
-- has_many : groups,through: :members
-- has_many : messages
-- has_many : members
+- has_many :groups,through: :members
+- has_many :messages
+- has_many :members
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|body|text||
 |image|string||
 |group|references|null:false,foreign_key:true|
 |user|references|null:false,foreign_key:true|
 
 ### Association
-- belongs_to: users
-- belongs_to: members
+- belongs_to:user
+- belongs_to:member
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -52,9 +53,9 @@ Things you may want to cover:
 |name|string|index:true,null:false,unique:true|
 
 ### Association
-- has_many : users,through: :members
-- has_many : members
-- has_many : messages
+- has_many :users,through: :members
+- has_many :members
+- has_many :messages
 
 ## membersテーブル
 |Column|Type|Options|
