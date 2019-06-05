@@ -38,8 +38,7 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null:false|
-|images|string|null:false|
+|image|string||
 |group_id|integer|null:false,foreign_key:true|
 |user_id|integer|null:false,foreign_key:true|
 
@@ -52,10 +51,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index:true,null:false,unique:true|
-|user_id|integer|null:false,foreign_key:true|
 
 ### Association
-- has_many :users
+- has_many :users,through:members
 - has_many :members
 - has_many :messages
 
