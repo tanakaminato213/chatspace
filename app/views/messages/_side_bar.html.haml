@@ -12,11 +12,11 @@
           = link_to "/users/669/edit" do
             =fa_icon "cog"
         .groups
-          %a{:href => "/groups/1348/messages"}
+          = link_to "/groups/1348/messages" do
             .group
               %p.group__group-name example
               %p.group__latest-message まだメッセージがありません
-          %a{:href => "/groups/1347/messages"}
+          = link_to "/groups/1347/messages" do
             .group
               %p.group__group-name sample
               %p.group__latest-message aaaaa
