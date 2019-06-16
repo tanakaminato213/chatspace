@@ -68,8 +68,6 @@
       height: 50px;
     }
     .input-box{
-      width: 390px;
-      height: 50px;
       display: inline-block;
       position: relative;
       &__text{
@@ -77,8 +75,6 @@
         height: 50px;
         border: none;
         padding: 0 40px 0 10px;
-        overflow: auto;
-        
       }
       &__icon{
         font-size: 1.3rem;
