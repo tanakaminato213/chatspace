@@ -27,6 +27,6 @@
       .input-box
         %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
         %label.input-box__icon{:for => "upload-icon"}
-          %i.far.fa-image
+          =fa_icon "image"
           %input#upload-icon.input-box__icon__file{:name => "message[image]", :type => "file",:image => "upload-icon"}/
       %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
