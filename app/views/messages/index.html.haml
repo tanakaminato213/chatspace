@@ -1,0 +1,32 @@
+%body
+  .flash-box
+  .wrapper
+
+  = render 'messages/side_bar'
+
+.chat-main
+  .main-header
+    .left-box
+      %h2.left-box__current-group{"data-group_id" => "1347"}
+        sample
+      %ul.left-box__member-list
+        Member：
+        %li.left-box__member-list__member aaaaa
+    %a{:href => "/groups/1347/edit"}
+      .left__edit-btn Edit
+  .messages
+    .message{"data-message_id" => "3557"}
+      .message__upper-info
+        %p.message__upper-info__talker aaaaa
+        %p.message__upper-info__date 2019/06/04(Tue) 19:28:51
+      %p.message__text aaaaa
+  .form
+    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/1347/messages", :enctype => "multipart/form-data", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "PbLO6h1zqsOsIOwqqDqf76s1xyvLCxcRFGo8bESCGeoLFvXRloRmIjmu4t/stnzyKDHTRZjSsvMmJ5O4h7yUdw=="}/
+      .input-box
+        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %label.input-box__icon{:for => "upload-icon"}
+          %i.far.fa-image
+          %input#upload-icon.input-box__icon__file{:name => "message[image]", :type => "file",:image => "upload-icon"}/
+      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
