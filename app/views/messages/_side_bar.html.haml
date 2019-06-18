@@ -4,13 +4,11 @@
       %p.box__user-name aaaaa
       %ul.box__menu
         %li.box__menu__new-group
-          %label.input-box__icon{:for => "upload-icon"}
-          = link_to "/groups/new" do
-            =fa_icon"edit"
+        = link_to do
+          =fa_icon"edit"
         %li.box__menu__edit-user
-          %label.input-box__icon{:for => "upload-icon"}
-          = link_to "/users/669/edit" do
-            =fa_icon "cog"
+        = link_to do
+          =fa_icon "cog"
         .groups
           = link_to "/groups/1348/messages" do
             .group
