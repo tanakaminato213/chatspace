@@ -1,0 +1,31 @@
+%body
+  .flash-box
+  .wrapper
+
+  = render 'messages/side_bar'
+
+.chat-main
+  .main-header
+    .left-box
+      %h2.left-box__current-group sample
+      %ul.left-box__member-list
+        Member：
+        %li.left-box__member-list__member 123
+
+    .left__edit-btn Edit
+
+  .messages
+    .message
+      .message__upper-info
+      %p.message__upper-info__talker aaaaa
+      %p.message__upper-info__date 2019/06/04(Tue) 19:28:51
+      %p.message__text aaaaa
+
+  .form
+    %form
+      %input.form__message
+      .form__mask
+        %label.form__mask__image
+          = fa_icon 'picture-o', class: 'icon'
+          %input.hidden{type: 'file'}
+      %input.form__submit{type: 'submit', value: 'Send'}
