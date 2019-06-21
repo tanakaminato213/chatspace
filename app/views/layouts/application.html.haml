@@ -1,9 +1,11 @@
 !!!
 %html
   %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
-    %title ChatSpaceSample
-    %meta{content: "authenticity_token", name: "csrf-param"}/
-    %meta{content: "2LavyBb5bTUy78C/zEmYY1MGGQ+jKcnxXstn2PfYqI5D6zqt13SJBJlqd5FRuSRq+wWpF26mAxaYmWnBx/3Kzg==", name: "csrf-token"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = yield 
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render 'layouts/notifications'
+    = yield
