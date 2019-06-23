@@ -7,19 +7,19 @@
 .chat-main
   .main-header
     .left-box
-      %h2.left-box__current-group sample
+      %h2.left-box__current-group
+        = @group.name
       %ul.left-box__member-list
-        Member：
-        %li.left-box__member-list__member 123
-
-    .left__edit-btn Edit
-
+        Member: 
+        %li.left-box__member-list__member 
+    = link_to edit_group_path(@group) do
+      .left__edit-btn Edit
   .messages
     .message
       .message__upper-info
-      %p.message__upper-info__talker aaaaa
-      %p.message__upper-info__date 2019/06/04(Tue) 19:28:51
-      %p.message__text aaaaa
+      %p.message__upper-info__talker
+      %p.message__upper-info__date 
+      %p.message__text 
 
   .form
     %form
