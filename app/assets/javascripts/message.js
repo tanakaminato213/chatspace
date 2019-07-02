@@ -20,7 +20,6 @@ $(function() {
   }
     $(".new_message").on("submit", function(e) {
       e.preventDefault();
-      console.log("発火")
       var formData = new FormData(this);
       var url = $(this).attr('action')
       $.ajax({
@@ -33,10 +32,9 @@ $(function() {
       })
       
       .done(function(data){
-        console.log("doneだよ")
         var html = buildHTML(data);
         $('.messages').append(html);
-        $('.form_message').val('')
+        $('.new_message')[0].reset();
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
         return false;
       })
