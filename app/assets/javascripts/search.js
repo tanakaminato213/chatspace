@@ -26,7 +26,10 @@ $(function() {
 
 
   $('#user-search-field').on("input",function(e) {
+    //フォームのチャットメンバー追加に文字を打ったら、以下の処理が動く
+
     var input = $("#user-search-field").val();
+    //
     if (input== ""){
       $('#user-search-result').empty();
       return false;
@@ -38,7 +41,6 @@ $(function() {
       url: '/users/search',
       data: {keyword : input},
       dataType: 'json'
-      
     })
     .done(function(users){
       // console.table(users);

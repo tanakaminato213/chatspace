@@ -30,7 +30,7 @@ $(function() {
       var url = $(this).attr('action')
       //ajaxで送るurl先を取得。フォームのアクション属性を取得
       //thisでnew_messageを取得している
-      
+
       $.ajax({
         url: url,
         type: "POST",
