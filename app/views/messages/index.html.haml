@@ -17,11 +17,6 @@
 
   .messages
     = render @messages
-    .message
-      .message__upper-info
-      %p.message__upper-info__talker
-      %p.message__upper-info__date 
-      %p.message__text 
 
   .form
     = form_for [@group, @message] do |f|
