@@ -1,9 +1,10 @@
 $(function() {
   function buildHTML(message){
-    var image = '';
-    if (message.image.url) { 
-      image = `<img src="${message.image.url}">`
-    }
+    // var image = '';
+    // if (message.image.url) { 
+    //   image = `<img src="${message.image.url}">`
+    // }
+    image = (message.image.url) ?img="${message.image.url}": image ='';
     var html =`<div class="message" data-id=${message.id}>
                 <div class="upper-message">
                 <div class="upper-message__user-name">
@@ -67,7 +68,6 @@ $(function() {
         data: {message_id: last_message_id}
       })
       .done(function(messages) {
-        console.log(messages)
         var insertHTML = ''
         $(messages).each (function(i,message){
 
@@ -80,7 +80,7 @@ $(function() {
 
       })
       .fail(function() {
-        //console.log('error');
+        alert("自動更新に失敗しました")
       });
     };
     setInterval(reloadMessages, 5000);
