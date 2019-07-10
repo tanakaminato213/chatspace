@@ -4,7 +4,7 @@ $(function() {
     // if (message.image.url) { 
     //   image = `<img src="${message.image.url}">`
     // }
-    image = (message.image.url) ?img="${message.image.url}": image ='';
+    var image = (message.image.url) ? "${message.image.url}" : '';
     var html =`<div class="message" data-id=${message.id}>
                 <div class="upper-message">
                 <div class="upper-message__user-name">
