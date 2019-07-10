@@ -25,18 +25,9 @@ $(function() {
       return html;
   }
     $(".new_message").on("submit", function(e) {
-      //フォームのsubmitが押されたら、以下の処理が動く
-
       e.preventDefault();
-      //フォームの動きを処理する
-
       var formData = new FormData(this);
-      //フォームデータを取得。大文字使う
-
       var url = $(this).attr('action')
-      //ajaxで送るurl先を取得。フォームのアクション属性を取得
-      //thisでnew_messageを取得している
-      
       $.ajax({
         url: url,
         type: "POST",
