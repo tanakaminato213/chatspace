@@ -26,8 +26,10 @@ $(function() {
 
 
   $('#user-search-field').on("input",function(e) {
-    $(this).toggleClass("clicked");
     //フォームのinputが押されたら以下の処理動く
+
+    $(this).toggleClass("clicked");
+
 
     var input = $("#user-search-field").val();
     //#user-search-fieldの値を取得
@@ -52,15 +54,23 @@ $(function() {
 
     
     $.ajax({
+    // ajaxのリクエスト先を指定している。
+
       type:'GET',
       url: '/users/search',
       data: {keyword : input, user_id:ids},
       dataType: 'json'
     })
     .done(function(users){
+      //ajaxのリクエストが成功したら以下の処理が動く。
+      //インスタンス変数を(users)という名前で受け取る。
+
       $('#user-search-result').empty();
-      
+      //'#user-search-result'の子要素を削除。
+
       if (users.length== 0){
+        
+
         var html = buildMESSAGE();
         $('#user-search-result').append(html)
       }
