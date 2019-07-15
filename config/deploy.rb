@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "3.11.0"
 
 set :application, "chatspace"
 set :repo_url, "git@github.com:tanakaminato213/chatspace.git"
@@ -46,8 +46,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
 
 # どの公開鍵を利用してデプロイするか
-set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/tanakaminato.pem']  ※例：~/.ssh/key_pem.pem
+set :ssh_options, auth_methods: ['publickey'],keys: ['~/.ssh/tanakaminato.pem']
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
