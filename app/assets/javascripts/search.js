@@ -36,22 +36,17 @@ $(function() {
     var ids = [];
     
     $(".member_list").each(function(i,element){
-    //.member_listの値ををelementに入れる
-
-    var id = $(element).val()
-    //
-    ids.push(id)
-    //
+      //.member_listの値ををelementに入れる
+      var id = $(element).val()
+      ids.push(id)
     })
 
-    if (input== ""){
+    if (input == ""){
       //検索欄に文字がないとき
       $('#user-search-result').empty();
       // リストを空にする
       return false;
     }
-    
-
     
     $.ajax({
     // ajaxのリクエスト先を指定している。
@@ -67,21 +62,15 @@ $(function() {
 
       $('#user-search-result').empty();
       //'#user-search-result'の子要素を削除。
-
-      if (users.length== 0){
+      if (users.length == 0){
         
-
         var html = buildMESSAGE();
         $('#user-search-result').append(html)
       }
 
       $(users).each (function(i,user){
-
-      var html = buildHTML(user);
-
-
-      $('#user-search-result').append(html)
-
+        var html = buildHTML(user);
+        $('#user-search-result').append(html)
       })
     })
     })
