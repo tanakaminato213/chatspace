@@ -7,6 +7,8 @@ class MessagesController < ApplicationController
   end
 
   def create
+  # インスタンス変数を定義したら、doneに送られる。
+
     @message = @group.messages.new(message_params)
 
     if @message.save
