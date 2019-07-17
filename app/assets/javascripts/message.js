@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   function buildHTML(message){
     var image = (message.image.url) ? image="${message.image.url}" : '';
     // if文を三項演算子で記述している。
@@ -113,6 +113,10 @@ $(function() {
       //アラートで"自動更新に失敗しました"と表示される。
       });
     };
-    setInterval(reloadMessages, 5000);
-    // reloadMessagesが５秒後に処理が実行される。
+    if (document.URL.match("/messages")){
+      //urlに("/messages")が含まれる時に
+
+      setInterval(reloadMessages, 5000);
+      // reloadMessagesが５秒後に処理が実行される。
+    }
   });
