@@ -10,8 +10,11 @@
       %h2.left-box__current-group
         = @group.name
       %ul.left-box__member-list
-        Member: 
-        %li.left-box__member-list__member 
+        Member  : 
+        - @group.users.each do |n|
+          %li.left-box__member-list__member
+          &nbsp
+          = n.name
     = link_to edit_group_path(@group) do
       .left__edit-btn Edit
 

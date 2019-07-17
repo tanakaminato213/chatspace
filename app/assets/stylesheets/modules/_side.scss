@@ -11,6 +11,9 @@ a:visited{
   width: 300px;
   color: white;
   float: left;
+  a,a:hover,a:visited{
+    color: white;
+  }
   .side-header{ 
     background-color: #253141;
     height: 100px;
@@ -38,6 +41,9 @@ a:visited{
       margin-left: 0.3rem;
       width: 14px;
       height: 24px;
+    }
+    &__fa fa-cog icon{
+      color: white;
     }
   }
 }

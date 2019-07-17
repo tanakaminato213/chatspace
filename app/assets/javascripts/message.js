@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', function() {
                 ${message.user_name}
                 </div>
                 <div class="upper-message__date">
-                ${message.created_at}
+                ${message.data}
                 </div>
                 </div>
                 <div class="lower-message">
@@ -34,6 +34,9 @@ $(document).on('turbolinks:load', function() {
       var url = $(this).attr('action')
       //ajaxで送るurl先を取得。フォームのアクション属性を取得。
       //thisは(".new_message")を指している。
+
+      // if(window.location.href.match(/\/groups\/\d{1,4}\/messages/));
+      
 
       $.ajax({
         // ajaxのリクエスト先を指定している。
@@ -72,6 +75,7 @@ $(document).on('turbolinks:load', function() {
       //アラートで'error'と表示される。
       })
     });
+    
 
     var reloadMessages = function() {
       last_message_id = $(".message:last").data("message-id");
@@ -113,10 +117,14 @@ $(document).on('turbolinks:load', function() {
       //アラートで"自動更新に失敗しました"と表示される。
       });
     };
-    if (document.URL.match("/messages")){
+    // if (document.URL.match("/messages")){
       //urlに("/messages")が含まれる時に
 
-      setInterval(reloadMessages, 5000);
-      // reloadMessagesが５秒後に処理が実行される。
-    }
+      // console.log(window.location.href)
+      if(window.location.href.match(/\/groups\/\d{1,4}\/messages/)){
+        
+
+        setInterval(reloadMessages, 5000);
+        // reloadMessagesが５秒後に処理が実行される。
+      }
   });
