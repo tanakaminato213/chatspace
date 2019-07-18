@@ -71,7 +71,7 @@ $(document).on('turbolinks:load', function() {
       .fail(function(){
       //ajaxのリクエストが失敗した時は以下の処理が動く。
 
-        alert('error');
+        alert('メッセージを入力して下さい');
       //アラートで'error'と表示される。
       })
     });
@@ -125,10 +125,6 @@ $(document).on('turbolinks:load', function() {
 
     }
     };
-    // if (document.URL.match("/messages")){
-      //urlに("/messages")が含まれる時に
-
-      // console.log(window.location.href)
 
 
       setInterval(reloadMessages, 5000);
