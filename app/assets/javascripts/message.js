@@ -78,6 +78,12 @@ $(document).on('turbolinks:load', function() {
     
 
     var reloadMessages = function() {
+
+
+      if(window.location.href.match(/\/groups\/\d{1,4}\/messages/)){
+
+      
+
       last_message_id = $(".message:last").data("message-id");
       //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
 
@@ -116,15 +122,16 @@ $(document).on('turbolinks:load', function() {
         alert("自動更新に失敗しました")
       //アラートで"自動更新に失敗しました"と表示される。
       });
+
+    }
     };
     // if (document.URL.match("/messages")){
       //urlに("/messages")が含まれる時に
 
       // console.log(window.location.href)
-      if(window.location.href.match(/\/groups\/\d{1,4}\/messages/)){
-        
 
-        setInterval(reloadMessages, 5000);
+
+      setInterval(reloadMessages, 5000);
         // reloadMessagesが５秒後に処理が実行される。
-      }
+      
   });
