@@ -26,9 +26,6 @@ $(document).on('turbolinks:load',function() {
 
 
   $('#user-search-field').on("input",function(e) {
-    //フォームのinputが押されたら以下の処理動く
-
-    $(this).toggleClass("clicked");
 
 
     var input = $("#user-search-field").val();
