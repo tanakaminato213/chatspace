@@ -18,7 +18,7 @@ $(document).on('turbolinks:load',function() {
 
   function buildMEMBERLIST(name,id){
     console.log("build")
-    var html=`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+    var html=`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user${id}'>
     <input name='group[user_ids][]' type='hidden' value=${id} class="member_list">
     <p class='chat-group-user__name'>${name}</p>
     <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
@@ -29,9 +29,6 @@ $(document).on('turbolinks:load',function() {
 
   $('#user-search-field').on("input",function(e) {
     //フォームのinputが押されたら以下の処理動く
-
-    $(this).toggleClass("clicked");
-
 
     var input = $("#user-search-field").val();
     //#user-search-fieldの値を取得
@@ -80,7 +77,7 @@ $(document).on('turbolinks:load',function() {
 
     console.log($(".user-search-add.chat-group-user__btn.chat-group-user__btn--add"))
 
-    $(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__btn--add",function(e){
+    $("#user-search-result").on("click",".user-search-add.chat-group-user__btn.chat-group-user__btn--add",function(e){
      
       //フォームの追加が押されたら、以下の処理が動く
 
@@ -99,7 +96,7 @@ console.log("function")
 
     })
 
-    $(document).on("click",".chat-group-user__btn--remove",function(e){
+    $(".js-add-user").on("click",".chat-group-user__btn--remove",function(e){
       //フォームの削除が押されたら、以下の処理が動く
 
       $(this).parent().remove()
