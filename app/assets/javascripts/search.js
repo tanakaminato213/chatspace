@@ -1,7 +1,8 @@
 $(document).on('turbolinks:load',function() {
 
   function buildHTML(user){
-    var html= `<div class="chat-group-user clearfix">
+    var html = ""
+    html= `<div class="chat-group-user clearfix">
               <p class="chat-group-user__name">${user.name}</p>
               <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${user.id} data-user-name=${user.name}>追加</div>
             </div>`
@@ -16,6 +17,7 @@ $(document).on('turbolinks:load',function() {
   }
 
   function buildMEMBERLIST(name,id){
+    console.log("build")
     var html=`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
     <input name='group[user_ids][]' type='hidden' value=${id} class="member_list">
     <p class='chat-group-user__name'>${name}</p>
@@ -76,9 +78,13 @@ $(document).on('turbolinks:load',function() {
     })
 
 
+    console.log($(".user-search-add.chat-group-user__btn.chat-group-user__btn--add"))
+
     $(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__btn--add",function(e){
+     
       //フォームの追加が押されたら、以下の処理が動く
 
+console.log("function")
 
       var user_name = $(this).data('user-name');
       var user_id = $(this).data('user-id');
