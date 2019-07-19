@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(message){
-    image = (message.image.url) ? image= `${message.image.url}` : '';
+    image = (message.image.url) ? image= `<img src ="${message.image.url}"></img>` : '';
     // if文を三項演算子で記述している。
 
     var html =`<div class="message" data-id=${message.id}>
